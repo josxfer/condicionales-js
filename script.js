@@ -191,6 +191,35 @@ if (opcion >= 1 & opcion <= 11) {
             document.write("Por favor ingresa una opción Válida (Course, Carrera o Master)")
         }
     }
+    if (opcion === 11) {
+        let coche = 0.20;
+        let moto = 0.10;
+        let autobus = 0.5;
+        let tipo = prompt("¿Cuál vehículo usaste para tu recorrido? (Escribe coche, moto o autobus)");
+        tipo = tipo.toUpperCase();
+        let distancia = parseInt(prompt("¿Escribe cuantos kilometros recorriste?"));
+        if (distancia <= 100 & tipo === "COCHE") {            
+            let total = (coche * distancia) + 5;
+            document.write("El valor a pagar por tu distancia recorrida es de: $" + total.toFixed(2));            
+        }else if (distancia <= 100 & tipo === "MOTO") {            
+            let total = (moto * distancia) + 5;
+            document.write("El valor a pagar por tu distancia recorrida es de: $" + total.toFixed(2));            
+        }else if (distancia <= 100 & tipo === "AUTOBUS") {            
+            let total = (autobus * distancia) + 5;
+            document.write("El valor a pagar por tu distancia recorrida es de: $" + total.toFixed(2));            
+        }else if (distancia > 100 & tipo === "COCHE") {            
+            let total = (coche * distancia) + 10;
+            document.write("El valor a pagar por tu distancia recorrida es de: $" + total.toFixed(2));            
+        }else if (distancia > 100 & tipo === "MOTO") {            
+            let total = (moto * distancia) + 10;
+            document.write("El valor a pagar por tu distancia recorrida es de: $" + total.toFixed(2));            
+        }else if (distancia > 100 & tipo === "AUTOBUS") {            
+            let total = (autobus * distancia) + 10;
+            document.write("El valor a pagar por tu distancia recorrida es de: $" + total.toFixed(2));            
+        }else{
+            document.write("Escribe un valor correcto");
+        }
+    }
 }else{
     alert("Ingresa un número válido entre el 1 y el 11");
 }
